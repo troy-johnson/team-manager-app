@@ -1,19 +1,17 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import { useRoutes } from 'hookrouter';
+import { Dashboard, User, NotFound } from './pages';
+import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <section class="section">
-        <div class="container">
-          <h1 class="title">Hello World</h1>
-          <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-          </p>
-        </div>
-      </section>
-    </div>
-  );
+const routes = {
+  '/': () => <Dashboard />,
+  '/user/:id': ({id}) => <User id={id} />
+};
+
+const App = () => {
+  const routeResult = useRoutes(routes);
+  
+  return routeResult || <NotFound />;
 }
 
 export default App;
