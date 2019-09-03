@@ -1,7 +1,24 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "react", "react-hooks"],
   "rules": {
     "comma-dangle": "off",
     "no-unused-vars": ["error", { "argsIgnorePattern": "_" }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "parserOptions": {
+    "experimentalObjectRestSpread": true,
+    "ecmaVersion": 10,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
   }
 }

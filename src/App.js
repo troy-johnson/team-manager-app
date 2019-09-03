@@ -5,13 +5,13 @@ import './App.css';
 
 const routes = {
   '/': () => <Dashboard />,
-  '/user/:id': ({id}) => <User id={id} />
+  '/user/:id': ({ id }) => <User id={id} />
 };
 
 const App = () => {
   const routeResult = useRoutes(routes);
-  
+
   return routeResult || <NotFound />;
-}
+};
 
 export default App;
