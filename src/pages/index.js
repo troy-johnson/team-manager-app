@@ -1,5 +1,6 @@
 import Dashboard from './Dashboard';
-import User from './User';
 import NotFound from './NotFound';
+import User from './User';
 
-export { Dashboard, User, NotFound };
+
+export { Dashboard, NotFound, User };

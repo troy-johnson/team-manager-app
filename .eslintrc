@@ -1,8 +1,23 @@
 {
-  "extends": ["airbnb-base", "react", "react-hooks"],
-  "rules": {
-    "comma-dangle": "off",
-    "no-unused-vars": ["error", { "argsIgnorePattern": "_" }]
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
   },
   "settings": {
     "react": {
@@ -13,12 +28,9 @@
     "react",
     "react-hooks"
   ],
-  "parserOptions": {
-    "experimentalObjectRestSpread": true,
-    "ecmaVersion": 10,
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "sourceType": "module"
+  "rules": {
+    "comma-dangle": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "_" }],
+    "react/display-name": "disabled"
   }
 }
