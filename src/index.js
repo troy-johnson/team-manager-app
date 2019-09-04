@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { Auth0Provider } from './auth0';
-import config from "./auth_config.json";
+import { Auth0Provider } from './utils/auth0';
+import config from "./utils/auth_config.json";
 import history from "./utils/history";
 import * as serviceWorker from './serviceWorker';
 

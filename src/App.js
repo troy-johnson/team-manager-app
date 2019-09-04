@@ -4,7 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { Dashboard, User, NotFound } from './pages';
 import { Loading, PrivateRoute } from './components';
 import './App.css';
-import { useAuth0 } from './auth0';
+import { useAuth0 } from './utils/auth0';
 import history from './utils/history';
 
 const App = () => {
