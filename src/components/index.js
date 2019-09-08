@@ -1,5 +1,5 @@
 import Loading from './Loading';
 import PrivateRoute from './PrivateRoute';
+import Navbar from './Navbar';
 
-
-export { Loading, PrivateRoute };
+export { Loading, PrivateRoute, Navbar };

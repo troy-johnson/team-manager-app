@@ -30,7 +30,6 @@
   ],
   "rules": {
     "comma-dangle": "off",
-    "no-unused-vars": ["error", { "argsIgnorePattern": "_" }],
-    "react/display-name": "disabled"
+    "no-unused-vars": ["error", { "argsIgnorePattern": "_" }]
   }
 }
