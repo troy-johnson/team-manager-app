@@ -1,40 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { Grid } from 'semantic-ui-react';
-import GameCard from '../../components/GameCard';
+import { Divider, Grid, Header } from 'semantic-ui-react';
+import { GameCard, TeamCard } from '../../components';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const [lastGame, setLastGame] = useState({ loaded: false, finished: true });
-  const [currentGame, setCurrentGame] = useState({ loaded: false });
-  const [nextGame, setNextGame] = useState({ loaded: false });
+  const [game, setGame] = useState({ loaded: false });
+  const [teams, setTeams] = useState({ loaded: false });
 
   useEffect(() => {
-    console.log('Getting last game!');
+    console.log('Getting game!');
   });
 
   useEffect(() => {
-    console.log('Getting current game!');
-  });
-
-  useEffect(() => {
-    console.log('Getting next game!');
+    console.log('Getting teams!');
   });
 
   return (
     <Grid className="dashboard">
       <Grid.Row>
-        <Grid.Column className="next-game" width={5}>
-          <GameCard game={lastGame} />
-        </Grid.Column>
-        <Grid.Column className="next-game" width={5}>
-          <GameCard game={currentGame} />
-        </Grid.Column>
-        <Grid.Column className="next-game" width={5}>
-          <GameCard game={nextGame} />
+        <Grid.Column className="next-game" width={8}>
+          <GameCard game={game} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        View Profile, view teams, etc.
+        <Grid.Column className="next-game" width={5}>
+          <TeamCard team={teams.loaded} />
+        </Grid.Column>
       </Grid.Row>
     </Grid>
   );
