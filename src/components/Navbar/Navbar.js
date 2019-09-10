@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Image, Menu, Placeholder } from "semantic-ui-react";
-import { useAuth0 } from "../../utils/auth0";
-import "./Navbar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Image, Menu, Placeholder } from 'semantic-ui-react';
+import './Navbar.css';
+import { useAuth0 } from '../../utils/auth0';
 
 const Navbar = () => {
   const { user } = useAuth0();
@@ -12,7 +12,7 @@ const Navbar = () => {
       <Menu fixed="top" inverted>
         <Container>
           <Menu.Item as={Link} to="/" header>
-            <Placeholder style={{ height: 20, width: 20, marginRight: "20px" }}>
+            <Placeholder style={{ height: 20, width: 20, marginRight: '20px' }}>
               <Placeholder.Image />
             </Placeholder>
             Team Manager

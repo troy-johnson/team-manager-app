@@ -1,11 +1,10 @@
 import React from "react";
+import { Loader } from 'semantic-ui-react';
 import "./Loading.css";
 
 const Loading = () => {
   return (
-    <div className="App">
-      Loading!
-    </div>
+    <Loader />
   );
 }
 

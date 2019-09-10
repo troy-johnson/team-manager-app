@@ -15,10 +15,10 @@ const App = () => {
   }
 
   return (
-    <Router history={history}>
+    <Router className="app" history={history}>
       <Navbar />
       <Switch>
-        <Route path="/" exact component={Dashboard} />
+        <PrivateRoute path="/" exact component={Dashboard} />
         <PrivateRoute path="/user/:id" component={User} />
         <Route component={NotFound} />
       </Switch>
