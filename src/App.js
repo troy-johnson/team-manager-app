@@ -12,18 +12,18 @@ const App = () => {
 
   if (loading) {
     return <Loading />;
+  } else {
+    return (
+      <Router className="app" history={history}>
+        <Navbar />
+        <Switch>
+          <PrivateRoute path="/" exact component={Dashboard} />
+          <PrivateRoute path="/user/:id" component={User} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    );
   }
-
-  return (
-    <Router className="app" history={history}>
-      <Navbar />
-      <Switch>
-        <PrivateRoute path="/" exact component={Dashboard} />
-        <PrivateRoute path="/user/:id" component={User} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
-  );
 };
 
 export default App;

@@ -1,11 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Image, Menu, Placeholder } from 'semantic-ui-react';
+import {
+  Container,
+  Dropdown,
+  Image,
+  Menu,
+  Placeholder
+} from 'semantic-ui-react';
 import './Navbar.css';
 import { useAuth0 } from '../../utils/auth0';
 
 const Navbar = () => {
-  const { user } = useAuth0();
+  const { user, logout, isAuthenticated, loginWithRedirect } = useAuth0();
+
+  const trigger = isAuthenticated ? (
+    <Image src={user.picture} avatar />
+  ) : (
+    <div onClick={() => loginWithRedirect()}>Sign In</div>
+  );
+
+  const logoutWithRedirect = () =>
+    logout({
+      returnTo: window.location.origin
+    });
 
   return (
     <div className="navbar">
@@ -27,13 +44,26 @@ const Navbar = () => {
             Teams
           </Menu.Item>
           <div className="avatar">
-            <Image
-              className="image"
-              src={user.picture}
-              as={Link}
-              to={`/user/${user.sub}`}
-              avatar
-            />
+            <Dropdown trigger={trigger} pointing="top left" icon={null}>
+              <Dropdown.Menu>
+                <Dropdown.Header
+                  icon="id card outline"
+                  content={`${user.nickname}`}
+                />
+                <Dropdown.Divider />
+                <Dropdown.Item
+                  icon="user circle"
+                  text="Profile"
+                  as={Link}
+                  to="/profile"
+                />
+                <Dropdown.Item
+                  icon="sign out"
+                  text="Sign Out"
+                  onClick={() => logoutWithRedirect()}
+                />
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </Container>
       </Menu>
