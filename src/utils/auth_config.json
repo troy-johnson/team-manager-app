@@ -1,4 +1,5 @@
 {
   "domain": "team-manager.auth0.com",
-  "clientId": "3uJ5NFc47UZtoKMdNmDRdimfPWZRRnZF"
+  "clientId": "3uJ5NFc47UZtoKMdNmDRdimfPWZRRnZF",
+  "scope": "openid profile email"
 }

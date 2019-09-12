@@ -48,7 +48,7 @@ const Navbar = () => {
               <Dropdown.Menu>
                 <Dropdown.Header
                   icon="id card outline"
-                  content={`${user.nickname}`}
+                  content={`${isAuthenticated ? user.nickname : ''}`}
                 />
                 <Dropdown.Divider />
                 <Dropdown.Item

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Auth0Provider } from './utils/auth0';
-import config from "./utils/auth_config.json";
-import history from "./utils/history";
+import config from './utils/auth_config.json';
+import history from './utils/history';
 import * as serviceWorker from './serviceWorker';
 
 const onRedirectCallback = appState => {
@@ -22,7 +22,7 @@ ReactDOM.render(
     redirect_uri={window.location.origin}
     onRedirectCallback={onRedirectCallback}
   >
-    <App />
+      <App />
   </Auth0Provider>,
   document.getElementById('root')
 );
