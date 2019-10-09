@@ -1,6 +1,6 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Dashboard, User, NotFound } from "./pages";
+import { Dashboard, User, NotFound, Team } from "./pages";
 import { Loading, PrivateRoute, Navbar } from "./components";
 import "./App.css";
 import "semantic-ui-css/semantic.css";
@@ -19,6 +19,7 @@ const App = () => {
         <Switch>
           <PrivateRoute path="/" exact component={Dashboard} />
           <PrivateRoute path="/user/:id" component={User} />
+          <PrivateRoute path="/teams" component={Team} />
           <Route component={NotFound} />
         </Switch>
       </Router>
