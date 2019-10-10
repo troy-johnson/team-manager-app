@@ -7,9 +7,8 @@ import { test } from '../../api/UserService';
 
 const Dashboard = () => {
   const [game, setGame] = useState({ loaded: false });
-  const [teams, setTeams] = useState({ loaded: false });
-  const [apiMessage, setApiMessage] = useState("");
-  const [isLoading, data, error] = useApi(test)
+  const [team, setTeams] = useState({ loaded: true });
+  const [isLoading, data, error] = useApi(test, {id: 1})
 
   return (
     <Grid className="dashboard">
@@ -21,7 +20,7 @@ const Dashboard = () => {
         <div>{isLoading ? 'Loading...' : data.title}</div>
       <Grid.Row>
         <Grid.Column className="next-game" width={5}>
-          <TeamCard team={teams.loaded} />
+          <TeamCard team={team} />
         </Grid.Column>
       </Grid.Row>
     </Grid>
