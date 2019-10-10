@@ -66,17 +66,6 @@ export const Auth0Provider = ({
     setUser(user);
   };
 
-  const request = async (url, method, body) => {
-    const token = await auth0Client.getTokenSilently();
-    return fetch(url, {
-      method,
-      body,
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-  };
-
   return (
     <Auth0Context.Provider
       value={{
@@ -86,7 +75,6 @@ export const Auth0Provider = ({
         popupOpen,
         loginWithPopup,
         handleRedirectCallback,
-        request,
         getIdTokenClaims: (...p) => auth0Client.getIdTokenClaims(...p),
         loginWithRedirect: (...p) => auth0Client.loginWithRedirect(...p),
         getTokenSilently: (...p) => auth0Client.getTokenSilently(...p),
