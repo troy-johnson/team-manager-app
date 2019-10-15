@@ -5,3 +5,17 @@ Button:nth-of-type(1) {
 .score {
   display: flex !important;
 }
+
+.teams {
+  font-size: 36px;
+}
+
+.table-row {
+  display: flex;
+  justify-content: center !important;
+}
+
+.table {
+  
+  max-width: 50%;
+}

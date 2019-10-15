@@ -5,8 +5,10 @@ import './TeamCard.css';
 const TeamCard = props => {
   const { team } = props;
 
+  console.log("team", team)
+
   return (
-    <Card>
+    <Card fluid style={{ maxWidth: "65%"}}>
       {team.loaded ? (
         <Card.Content>
           <Image src="" />
@@ -20,15 +22,14 @@ const TeamCard = props => {
       )}
       {team.loaded ? (
         <Card.Content>
-          <Card.Header>Team Name</Card.Header>
-          <Card.Meta>Team Sport</Card.Meta>
-          <Card.Description>Next Game</Card.Description>
+          <Card.Header>{team.name}</Card.Header>
+          <Card.Meta>{team.sport}</Card.Meta>
         </Card.Content>
       ) : (
         <Card.Content>
           <Placeholder>
+            <Placeholder.Line length="medium" />
             <Placeholder.Line length="short" />
-            <Placeholder.Line length="very long" />
             <Placeholder.Line length="medium" />
           </Placeholder>
         </Card.Content>

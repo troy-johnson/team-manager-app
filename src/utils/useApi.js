@@ -3,7 +3,7 @@ import { useAuth0 } from './auth0';
 
 export const useApi = (apiFunction, params) => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(null);
   const { getTokenSilently } = useAuth0();
 
@@ -11,18 +11,19 @@ export const useApi = (apiFunction, params) => {
     getTokenSilently().then(token => {
       apiFunction(params, token)
         .then(data => {
+          console.log('data', data)
           setData(data);
-          setIsLoading(false);
+          setLoaded(true);
         })
         .catch(err => {
           setError({
             error: err,
             message: err.message || 'Something went wrong'
           });
-          setIsLoading(false);
+          setLoaded(true);
         });
     });
-  }, [apiFunction, params]);
+  }, []);
 
-  return [isLoading, data, error];
+  return [loaded, data, error];
 };
