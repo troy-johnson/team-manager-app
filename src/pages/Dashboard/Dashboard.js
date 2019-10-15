@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   return (
     <Grid className="dashboard">
-      <Grid.Row>
+       <Grid.Row>
         <Grid.Column className="next-game" width={12}>
           <GameCard gameLoaded={gameLoaded} game={game} gameError={gameError} />
         </Grid.Column>

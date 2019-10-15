@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth0 } from './auth0';
+import axios from 'axios';
 
 export const useApi = (apiFunction, params) => {
   const [data, setData] = useState(null);
@@ -9,7 +10,10 @@ export const useApi = (apiFunction, params) => {
 
   useEffect(() => {
     getTokenSilently().then(token => {
-      apiFunction(params, token)
+      const http = axios.create({
+        headers: {'Authorization': `Bearer ${token}`}
+      })
+      apiFunction(params, http)
         .then(data => {
           console.log('data', data)
           setData(data);
